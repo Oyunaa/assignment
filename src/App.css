@@ -14,7 +14,6 @@
   align-items: center;
   border: 2px solid rgb(46, 109, 228);
   border-radius: 4px;
-
 }
 
 .txtInput {
@@ -23,10 +22,9 @@
   background: "transparent";
   border: none;
   outline: none;
-  
 }
 
-input:focus { 
+input:focus {
   outline: none !important;
 }
 
@@ -44,7 +42,6 @@ input:focus {
   display: flex;
   flex-direction: row;
   padding: 5px;
-  
 }
 
 .selectedItems {
@@ -63,7 +60,6 @@ input:focus {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  
 }
 
 .optionsMouseEnter {
@@ -82,4 +78,33 @@ input:focus {
   padding: 5px;
   background-color: "red";
   border-radius: 4px;
+}
+
+.selectBox {
+  display: flex;
+  flex-direction: row;
+}
+
+.fs12{
+  font-size: 12px;
+}
+.textColorRed{
+  color: red;
+}
+.textColorWhite{
+  color: white;
+}
+.pdr5{
+padding-right: 5px;
+}
+
+.selectBtns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.arrow {
+  border-left: 1px solid rgb(223, 223, 223);
+  margin: 5px
 }
