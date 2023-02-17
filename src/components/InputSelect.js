@@ -6,6 +6,7 @@ export const InputSelect = (props) => {
     setSearchText,
     setShowChoice,
     setSelected,
+    setInputFocus,
   } = props;
 
   const removeFromList = (item) => {
@@ -50,7 +51,11 @@ export const InputSelect = (props) => {
       </div>
       <div className="selectBtns">
         <img
-          onClick={() => setSelected([])}
+          onClick={() => {
+            setInputFocus(true);
+            setSelected([]);
+            setSearchText("");
+          }}
           alt="arrow"
           src="https://cdn-icons-png.flaticon.com/512/458/458595.png"
           height="10"

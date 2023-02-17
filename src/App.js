@@ -29,31 +29,37 @@ function App() {
       const filterCountries = countries.filter((a) => {
         return a.name.toLowerCase().includes(searchText.toLocaleLowerCase());
       });
+
       setFilterCountries(filterCountries);
       console.log("filter", filterCountries);
     }
   }, [searchText]);
 
   return (
-    <div className="App">
-      <InputSelect
-        selected={selected}
-        searchText={searchText}
-        setSearchText={setSearchText}
-        inputFocus={inputFocus}
-        setShowChoice={setShowChoice}
-        setSelected={setSelected}
-      />
-      {showChoice && (
-        <SelectList
-          setSearchText={setSearchText}
+    <div className="App" onClick={() => setShowChoice(false)}>
+      <div onClick={(e) => e.stopPropagation()}>
+        <InputSelect
           selected={selected}
+          searchText={searchText}
+          setSearchText={setSearchText}
+          inputFocus={inputFocus}
+          setShowChoice={setShowChoice}
           setSelected={setSelected}
-          setErrorMessage={setErrorMessage}
-          filterCountries={filterCountries}
           setInputFocus={setInputFocus}
         />
-      )}
+
+        {showChoice && (
+          <SelectList
+            setSearchText={setSearchText}
+            selected={selected}
+            setSelected={setSelected}
+            setErrorMessage={setErrorMessage}
+            filterCountries={filterCountries}
+            setInputFocus={setInputFocus}
+            searchText={searchText}
+          />
+        )}
+      </div>
 
       {errMessage && (
         <div className="error">

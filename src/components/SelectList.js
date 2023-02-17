@@ -1,8 +1,14 @@
 export const SelectList = (props) => {
-const {filterCountries, selected, setSelected, setErrorMessage, setSearchText, setInputFocus } = props;
+  const {
+    filterCountries,
+    selected,
+    setSelected,
+    setErrorMessage,
+    setSearchText,
+    setInputFocus,
+  } = props;
 
-
-const onMouseEnter = (e) => {
+  const onMouseEnter = (e) => {
     e.currentTarget.classList.toggle("optionsMouseEnter");
     e.currentTarget.classList.remove("optionsMouseLeave");
   };
@@ -43,7 +49,10 @@ const onMouseEnter = (e) => {
               onClick={() => onAddtoList(country)}
               key={country.code}
             >
-              <span> {country.name}</span>
+              <span>
+                {country.name}
+                {/* {country.name.replace(searchText, searchText.toUpperCase())} */}
+              </span>
             </div>
           );
         })
